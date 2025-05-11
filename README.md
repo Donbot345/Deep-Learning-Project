@@ -25,11 +25,17 @@ The project uses the PlantDoc dataset from Kaggle:
 
 ## Repository structure 
 ├── README.md
+
 ├── finished.py
+
 ├── report 
+
 ├── presentation 
+
 ├── models 
+
 ├── visualizations 
+
 └── requirements 
 
 ## Setup and Installation 
@@ -111,8 +117,53 @@ Inference was run on six randomly selected test images. The model was able to de
 - Apply targeted data augmentation for underrepresented classes
   
 ## Conclusion 
+The implementation of YOLOv5 for plant disease detection demonstrates the viability of deep learning object detection for agricultural applications. The project successfully trained a YOLOv5 model to detect and classify 30 different plant disease classes and achieved an overall precision of 0.51, recall: 0.25, mAP@0.5: 0.22, and mAP@0.50.95: 0.14, with an inference speed of 6.4ms per image. 
+
+The analysis revealed significant variation in performance across different disease classes. There was a clear correlation between class representation in the training dataset and detection accuracy. So high-performing classes like Corn rust leaf (mAP@0.5: 0.723) typically featured distinctive visual characteristics and abundant training samples, while underperforming classes like Tomato Early blight leaf (mAP@0.5: 0.027) suffered from visual similarity to other diseases and limited representation in the dataset.
+
+The implementation emphasizes the essential balance between accuracy and efficiency needed for practical agricultural applications. The compact YOLOv5s model, which is only 14.1 MB, offers real-time inference capabilities that are suitable for field deployment on resource-constrained devices while still delivering reasonable detection performance. This balance makes the system practical for real-world use, where timely detection can significantly influence disease management results.
+
+Class imbalance has emerged as a significant challenge, with the model displaying a bias toward well-represented classes. This finding highlights the importance of balanced datasets in agricultural applications, especially since some diseases are naturally rarer but equally important to detect. Future implementations should tackle this issue by focusing on targeted data collection, employing augmentation strategies, and modifying loss functions.
+
+Overall, the project lays a solid foundation for automated plant disease detection, presenting clear avenues for improvement and practical deployment. By facilitating early and accurate detection of plant diseases, such systems can greatly contribute to sustainable agriculture by minimizing crop losses, optimizing treatment applications, and enhancing integrated pest management strategies. These deep learning-based detection systems can potentially transform disease monitoring and management practices worldwide.
 
 ## Citations 
+1. YOLOv5 (Object Detection Framework)
+Ultralytics. (2020). YOLOv5. GitHub repository.
+https://github.com/ultralytics/yolov5
+
+2. PlantDoc Dataset
+MGS, A. (2023). PlantDoc - Plant Disease Dataset. Kaggle.
+https://www.kaggle.com/datasets/andresmgs/plantdec
+
+3. PyTorch (Deep Learning Framework)
+Paszke, A., Gross, S., Massa, F., et al. (2019). PyTorch: An Imperative Style, High-Performance Deep Learning Library. NeurIPS.
+https://pytorch.org/
+
+4. Google Colab (Notebook Environment)
+Google Research. Google Colaboratory.
+https://colab.research.google.com/
+
+5. Roboflow (Dataset Formatting & YAML Conversion)
+Roboflow. (n.d.). Roboflow: Organize, Label, and Export Datasets for YOLOv5 and Other Models.
+https://roboflow.com/
+
+6. Matplotlib & Seaborn (Visualization Libraries)
+Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. Computing in Science & Engineering.
+Waskom, M. L. (2021). Seaborn: Statistical data visualization. Journal of Open Source Software.
+https://matplotlib.org/
+https://seaborn.pydata.org/
+
+7. Pandas (Data Handling)
+McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the 9th Python in Science Conference.
+https://pandas.pydata.org/
+
+[YOLOv5 - Ultralytics](https://github.com/ultralytics/yolov5) 
+[PlantDoc Dataset - Roboflow](https://universe.roboflow.com/joseph-nelson/plantdoc)
+[PlantDoc Dataset - Kaggle]((https://www.kaggle.com/datasets/andresmgs/plantdec))
+[Roboflow Annotation Tools](https://roboflow.com/)
+[Matplotlib](https://matplotlib.org/) and [Seaborn](https://seaborn.pydata.org/)
+[Pandas](https://pandas.pydata.org/)
 
 ## License 
 - MIT
